@@ -1,0 +1,31 @@
+    int i, j, value;
+    value = arr[n-1];    // Store the value of the last element
+    // Traverse the array from the second last element to the first element
+    for (i = n-2; i >= 0; i--) {
+        // If the current element is greater than the stored value
+        if (arr[i] > value) {
+            // Shift the current element one position to the right
+            arr[i+1] = arr[i];
+            // Print the array
+            for (j = 0; j < n; j++) {
+                printf("%d ", arr[j]);
+            }
+            printf("\n");
+        } else {
+            // Place the stored value at the current position + 1
+            arr[i+1] = value;
+            // Print the array
+            for (j = 0; j < n; j++) {
+                printf("%d ", arr[j]);
+            }
+            printf("\n");
+            return;
+        }
+    }
+    // If no smaller element was found, place the stored value at the first position
+    arr[0] = value;
+    // Print the array
+    for (j = 0; j < n; j++) {
+    printf("%d ", arr[j]);}
+    printf("\n");
+}
