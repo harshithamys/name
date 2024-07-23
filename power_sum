@@ -1,0 +1,13 @@
+ int power = pow(num, N);
+    if (power > X) {
+        return 0;
+    } else if (power == X) {
+        return 1;
+    } else {
+        return powerSumHelper(X - power, N, num + 1) + powerSumHelper(X, N, num + 1);
+    }
+}
+
+// Main function to find the number of ways to express X as sum of N-th powers of unique natural numbers
+int powerSum(int X, int N) {
+    return powerSumHelper(X, N, 1);
